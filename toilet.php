@@ -1,3 +1,7 @@
+<head>
+<meta http-equiv="refresh" content="30">
+</head>
+
 <?php
 
 require_once 'conf/config.php';
