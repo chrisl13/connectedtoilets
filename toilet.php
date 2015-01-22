@@ -2,6 +2,9 @@
 <meta http-equiv="refresh" content="30">
 </head>
 
+<title>Connected Toilets</title>
+<img align=right width=150 height=50 src="img/CTLogo.png"><br>
+
 <?php
 
 require_once 'conf/config.php';
@@ -49,21 +52,16 @@ $myHubId = $login_info['hubIds'][0];
 
 $alarm = json_decode($data, true);
 foreach ($alarm['otherDevices'] as &$sensor) {
-//  $state = $sensor['state'];
-//    if (strcmp($state, "CLOSED") == 0) {
-//      $state = "ENGAGED";
-//    } else {
-//      $state = "AVAILABLE";
-//    }
   $toilets[$sensor['name']] = $sensor['state'];
 }
 
 ?>
 
 <table width=100%><tr>
-<td><center><?php if (strcmp($toilets['Disabled'], "CLOSED") == 0) { ?><font size="10" color="red"><img src="img/disabled-busy.png"><br>BUSY<?php } else { ?><font size="10" color="green"><img src="img/disabled.png"><br>FREE <?php } ?> </center></td>
+<td valign="bottom"><center><?php if (strcmp($toilets['Disabled'], "CLOSED") == 0) { ?><font size="10" color="red"><img src="img/disabled-busy.png"><br>BUSY<?php } else { ?><font size="10" color="green"><img src="img/disabled.png"><br>FREE <?php } ?> </center></td>
 <td><center><?php if (strcmp($toilets['Gents1'], "CLOSED") == 0) { ?><font size="10" color="red"><img src="img/gents-busy.jpg"><br>BUSY<?php } else { ?><font size="10" color="green"><img src="img/gents.jpg"><br>FREE <?php } ?> </center></td>
 <td><center><?php if (strcmp($toilets['Gents2'], "CLOSED") == 0) { ?><font size="10" color="red"><img src="img/gents-busy.jpg"><br>BUSY<?php } else { ?><font size="10" color="green"><img src="img/gents.jpg"><br>FREE <?php } ?> </center></td>
 <td><center><?php if (strcmp($toilets['Ladies1'], "CLOSED") == 0) { ?><font size="10" color="red"><img src="img/ladies-busy.jpg"><br>BUSY<?php } else { ?><font size="10" color="green"><img src="img/ladies.jpg"><br>FREE <?php } ?> </center></td>
 <td><center><?php if (strcmp($toilets['Ladies2'], "CLOSED") == 0) { ?><font size="10" color="red"><img src="img/ladies-busy.jpg"><br>BUSY<?php } else { ?><font size="10" color="green"><img src="img/ladies.jpg"><br>FREE <?php } ?> </center></td>
 </tr></table>
+
