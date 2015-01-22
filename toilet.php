@@ -1,8 +1,10 @@
+<html>
 <head>
 <meta http-equiv="refresh" content="30">
-</head>
-
 <title>Connected Toilets</title>
+</head>
+<body>
+
 <img align=right width=150 height=50 src="img/CTLogo.png"><br>
 
 <?php
@@ -64,4 +66,7 @@ foreach ($alarm['otherDevices'] as &$sensor) {
 <td><center><?php if (strcmp($toilets['Ladies1'], "CLOSED") == 0) { ?><font size="10" color="red"><img src="img/ladies-busy.jpg"><br>BUSY<?php } else { ?><font size="10" color="green"><img src="img/ladies.jpg"><br>FREE <?php } ?> </center></td>
 <td><center><?php if (strcmp($toilets['Ladies2'], "CLOSED") == 0) { ?><font size="10" color="red"><img src="img/ladies-busy.jpg"><br>BUSY<?php } else { ?><font size="10" color="green"><img src="img/ladies.jpg"><br>FREE <?php } ?> </center></td>
 </tr></table>
+
+</body>
+</html>
 
